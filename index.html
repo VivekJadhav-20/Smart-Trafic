@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Traffic Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <h1>Smart AI Traffic Management Dashboard</h1>
+
+    <div id="clock"></div>
+
+    <div class="dashboard">
+        <div class="card">
+    <h2>Live Traffic Map</h2>
+       <div id="map" style="height:300px;"></div>
+    </div>
+
+        <div class="card" id="weatherSection">
+            <h2>Weather Risk</h2>
+            <p id="weatherData">Loading weather...</p>
+        </div>
+
+        <div class="card" id="reportSection">
+            <h2>Report Traffic Issue</h2>
+            <input type="text" id="location" placeholder="Enter location">
+            <select id="type">
+                <option>Accident</option>
+                <option>Congestion</option>
+                <option>Road Block</option>
+            </select>
+            <button onclick="submitReport()">Submit</button>
+            <ul id="reportList"></ul>
+        </div>
+
+        <div class="card" id="emergencySection">
+            <h2>Emergency Mode</h2>
+            <button onclick="activateEmergency()">Activate Emergency Corridor</button>
+
+            <p id="signal1">Signal 1: RED</p>
+            <p id="signal2">Signal 2: RED</p>
+            <p id="signal3">Signal 3: RED</p>
+        </div>
+
+        <div class="card" id="parkingSection">
+            <h2>Illegal Parking Monitoring</h2>
+
+            <div id="parkingArea">
+                <div id="car">🚗</div>
+            </div>
+
+            <button onclick="detectParking()">Check Parking</button>
+            <p id="parkingStatus"></p>
+            <ul id="violationList"></ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
